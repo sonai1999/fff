@@ -13,14 +13,7 @@ services:
       - sonai-network
 
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
-      args:
-        VITE_API_BASE_URL: "https://api.example.com/api/v1"
-        VITE_USE_BACKEND_PRODUCTS: "true"
-        VITE_PRODUCT_REQUEST_TIMEOUT_MS: "12000"
-    image: sonai-frontend:prod
+    image: sonaishub/sonais:frontend-v1.0.1
     container_name: sonai-frontend
     restart: unless-stopped
     ports:
